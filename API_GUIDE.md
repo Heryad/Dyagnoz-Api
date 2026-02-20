@@ -82,6 +82,32 @@ Returns all tests performed specifically on that serial number.
 ---
 
 ## ⚡ Quick Start Commands
-1. **Start DB:** `docker-compose up -d`
-2. **Setup Tables:** `bun run db:push`
-3. **Run API:** `bun run dev`
+1. **Start Infrastructure (DB & pgAdmin):** 
+   ```bash
+   cd infrastructure
+   docker-compose up -d
+   ```
+2. **Setup Tables:** 
+   ```bash
+   bun run db:push
+   ```
+3. **Run API Manually:** 
+   ```bash
+   bun run dev
+   ```
+
+---
+
+## 🛠️ Managing Database (pgAdmin)
+You can now manage your database via a web interface:
+* **URL:** `http://localhost:5050`
+* **Login Email:** `admin@dyagnoz.com`
+* **Login Password:** `admin`
+
+**To connect pgAdmin to the database:**
+1. Click "Add New Server".
+2. Name: `Dyagnoz DB`.
+3. Connection Tab -> Host: `db` (or your VPS IP if accessing remotely).
+4. Port: `5432`.
+5. Maintenance database/Username: `user`.
+6. Password: `password`.
